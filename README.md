@@ -73,7 +73,7 @@ Cuando veas `Tomcat started on port 8080` y `Started BibliotecaApplication`, la 
 2. En la colección → pestaña **Variables** → cambia `baseUrl` por la URL del paso 5 (**sin** `/` al final) → **Save**.
 3. Ejecuta en orden:
 
-**GET** `{{baseUrl}}/api/libros` → 200 con 2 libros iniciales.
+**GET** `{{baseUrl}}/api/libros` → 200 con 2 libros iniciales
 
 **POST** `{{baseUrl}}/api/libros`, Body → raw → JSON:
 ```json
