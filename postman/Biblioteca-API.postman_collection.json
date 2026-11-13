@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "Biblioteca API (Spring Boot)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "1. GET - Listar libros",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/libros"
+      }
+    },
+    {
+      "name": "2. POST - Crear libro",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"El principito\",\n  \"autor\": \"Antoine de Saint-Exupéry\",\n  \"anioPublicacion\": 1943,\n  \"genero\": \"Fábula\",\n  \"precio\": 35.00\n}"
+        },
+        "url": "{{baseUrl}}/api/libros"
+      }
+    },
+    {
+      "name": "3. GET - Libro por id",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/libros/3"
+      }
+    },
+    {
+      "name": "4. POST - Datos inválidos (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"\",\n  \"autor\": \"Anónimo\",\n  \"anioPublicacion\": 3000,\n  \"genero\": \"Misterio\",\n  \"precio\": -5\n}"
+        },
+        "url": "{{baseUrl}}/api/libros"
+      }
+    }
+  ]
+}
